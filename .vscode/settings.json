@@ -1,0 +1,6 @@
+{
+    "editor.formatOnSave": true,
+    // Enable ESlint flat config support
+    "eslint.experimental.useFlatConfig": true,
+    "editor.tabSize": 2
+}
