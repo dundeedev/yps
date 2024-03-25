@@ -1,2 +1,5 @@
-@import "./config/variables";
-@import "./config/reset";
+@import './config/variables';
+@import './base/reset';
+@import './base/base';
+@import './base/typography';
+@import './layout/news';

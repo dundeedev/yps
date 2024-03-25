@@ -1,6 +1,46 @@
 :root {
-  --brand-primary: red;
-  --brand-secondary: red;
+  /* General */
+  --font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu',
+    'Cantarell', 'Noto Sans', sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
 
-  --text-colour: #000;
+  /* Brand colours */
+  --brand-alpha: #2dc98a;
+  --brand-bravo: #101921;
+
+  /* Neutrals */
+  --neutral-alpha: #fafafa;
+  --neutral-bravo: #eaeaea;
+  --neutral-charlie: #dadada;
+  --neutral-delta: #cacaca;
+  --neutral-echo: #bababa;
+  --neutral-foxtrot: #aaaaaa;
+
+  /* Dark */
+  --dark-alpha: #101921;
+
+  /* Message colors */
+  --error: red;
+  --warning: orange;
+  --success: green;
+
+  /* Spacing */
+  --spacing: 1rem;
+
+  /* Text */
+  --heading-colour: #101921;
+  --text-colour: #101921;
+  --text-muted-colour: #4a697c;
+
+  /* Media Queries */
+  @custom-media --mobile (width < 640px);
+  @custom-media --tablet (width >= 640px);
+  @custom-media --tablet-only (640px <= width <= 1000px);
+  @custom-media --desktop (width >= 1001px);
+  @custom-media --desktop-large (width >= 1500px);
+
+  /* Container */
+  --container-width: 1170px;
 }
