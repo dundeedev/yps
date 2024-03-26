@@ -10,7 +10,18 @@ export default defineNuxtConfig({
   eslint: {},
   postcss: {
     plugins: {
-      'postcss-preset-env': {},
+      '@csstools/postcss-global-data': {
+        files: [
+          'assets/css/config/media-queries.css'
+        ]
+      },
+      'postcss-preset-env': {
+        "stage": 2,
+        "features": {
+          "nesting-rules": false,
+          "custom-media-queries": true
+        }
+      },
       'postcss-nested': {},
     }
   },

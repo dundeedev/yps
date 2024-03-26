@@ -3,7 +3,7 @@ body {
   font-size: var(--font-size);
   font-weight: 400;
   line-height: var(--line-height);
-  color: var(--body-color);
+  color: var(--text-color);
   background-color: var(--background);
 
   color-scheme: light dark;

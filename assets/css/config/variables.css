@@ -1,7 +1,6 @@
 :root {
   /* General */
-  --font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu',
-    'Cantarell', 'Noto Sans', sans-serif;
+  --font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
@@ -11,7 +10,7 @@
   --brand-bravo: #101921;
 
   /* Neutrals */
-  --neutral-alpha: #fafafa;
+  --neutral-alpha: #e8eff3;
   --neutral-bravo: #eaeaea;
   --neutral-charlie: #dadada;
   --neutral-delta: #cacaca;
@@ -34,13 +33,11 @@
   --text-colour: #101921;
   --text-muted-colour: #4a697c;
 
-  /* Media Queries */
-  @custom-media --mobile (width < 640px);
-  @custom-media --tablet (width >= 640px);
-  @custom-media --tablet-only (640px <= width <= 1000px);
-  @custom-media --desktop (width >= 1001px);
-  @custom-media --desktop-large (width >= 1500px);
-
   /* Container */
   --container-width: 1170px;
+
+  /* Brands */
+  --twitter: #000;
+  --facebook: #1877f2;
+  --linkedin: #0a66c2;
 }

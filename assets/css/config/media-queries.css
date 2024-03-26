@@ -1,0 +1,8 @@
+/* Media Queries */
+:root {
+  @custom-media --mobile (width < 640px);
+  @custom-media --tablet (width >= 640px);
+  @custom-media --tablet-only (640px <= width <= 1000px);
+  @custom-media --desktop (width >= 1001px);
+  @custom-media --desktop-large (width >= 1500px);
+}
