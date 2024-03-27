@@ -4,22 +4,21 @@
       <NuxtImg v-if="image" :src="image" />
     </div>
     <div class="card__body">
-      <h3 class="card__title">{{ title }}</h3>
-      <div class="card__excerpt">{{ intro }}</div>
+      <h3 class="card__title">
+        {{ title }}
+      </h3>
+      <div class="card__excerpt">
+        {{ intro }}
+      </div>
     </div>
-    <div class="card__action">
-      <NuxtLink :to="`/articles/${id}`">Read More</NuxtLink>
+    <div class="card__footer">
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
 
 <script setup>
 const props = defineProps({
-  id: {
-    type: String,
-    default: null,
-    required: true,
-  },
   title: {
     type: String,
     default: '',
@@ -65,7 +64,7 @@ const props = defineProps({
     line-height: 1.57;
   }
 
-  &__action {
+  &__footer {
     padding: 0 10px;
     margin-top: auto;
   }

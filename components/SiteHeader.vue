@@ -1,14 +1,7 @@
 <template>
   <header class="site-header">
-    <NuxtLink
-      to="/"
-      title="Homepage"
-      class="site-header__logo"
-    >
-      <Logo
-        class="site-header__logo-svg"
-        filled
-      />
+    <NuxtLink to="/" title="Homepage" class="site-header__logo">
+      <Logo class="site-header__logo-svg" filled />
     </NuxtLink>
     <div class="site-header__search">
       <SearchBar />

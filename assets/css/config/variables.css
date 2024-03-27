@@ -32,6 +32,8 @@
   --heading-colour: #101921;
   --text-colour: #101921;
   --text-muted-colour: #4a697c;
+  --text-light-colour: #fff;
+  --text-dark-colour: #101921;
 
   /* Container */
   --container-width: 1170px;

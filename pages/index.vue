@@ -1,5 +1,6 @@
 <template>
   <div>
+    <HeroFeatured />
     <div class="container">
       <div v-if="error && error.statusCode === 404 && searchTerm" class="message">
         Sorry, there are no articles matching your search terms
@@ -9,12 +10,16 @@
       <div v-if="articles" class="news-list">
         <BaseCard
           v-for="(article, index) in articles"
-          :key="'news-item-' + index"
+          :key="`news-item-${index}`"
           :title="article.title"
           :image="article.image"
           :intro="article.intro"
-          :id="article.id"
-        />
+          @click="navigateTo(`/articles/${article.id}`)"
+        >
+          <template #footer>
+            <BaseButton :to="`/articles/${article.id}`" :text-link="true">Read Article</BaseButton>
+          </template>
+        </BaseCard>
       </div>
     </div>
   </div>
@@ -31,9 +36,7 @@ const url = computed(() => {
   const url = new URL(`${runtimeConfig.public.apiBase}/Articles`)
   url.searchParams.append('page', currentPage.value)
   url.searchParams.append('limit', pageLimit.value)
-  if (searchTerm.value) {
-    url.searchParams.append('search', searchTerm.value)
-  }
+  url.searchParams.append('search', searchTerm.value ?? null)
   return url
 })
 
