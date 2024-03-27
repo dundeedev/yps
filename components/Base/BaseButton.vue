@@ -28,6 +28,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  textLight: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const component = computed(() => {
@@ -43,6 +47,7 @@ const buttonClasses = computed(() => {
     `button--${props.buttonSize}`,
     {
       'button--text-link': props.textLink,
+      'button--text-light': props.textLight,
     },
   ]
 })
@@ -53,7 +58,7 @@ const buttonClasses = computed(() => {
   --primary-bg: var(--brand-alpha);
   --secondary-bg: var(--brand-bravo);
   --dark-bg: #000;
-  --light-bg: #fff;
+  --light-bg: var(--neutral-alpha);
 
   --primary-colour: var(--text-dark-colour);
   --secondary-colour: var(--text-light-colour);
@@ -84,6 +89,21 @@ const buttonClasses = computed(() => {
   &--primary {
     background: var(--primary-bg);
     color: var(--primary-colour);
+  }
+
+  &--secondary {
+    background: var(--secondary-bg);
+    color: var(--secondary-colour);
+  }
+
+  &--light {
+    background: var(--light-bg);
+    color: var(--light-colour);
+  }
+
+  &--dark {
+    background: var(--dark-bg);
+    color: var(--dark-colour);
   }
 
   &--sm {
@@ -128,6 +148,10 @@ const buttonClasses = computed(() => {
     &:hover:after {
       padding-left: 10px;
     }
+  }
+
+  &--text-light {
+    color: var(--text-light-colour);
   }
 }
 </style>

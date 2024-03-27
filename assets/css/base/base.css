@@ -6,6 +6,7 @@ body {
   color: var(--text-color);
   background-color: var(--background);
 
+  scroll-behavior: smooth;
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;

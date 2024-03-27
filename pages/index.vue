@@ -9,7 +9,7 @@
       :button-to="`/articles/${articles.latest[0].id}`"
       button-text="Read Article"
     />
-    <div class="container">
+    <div id="articles" class="container">
       <div v-if="error && error.statusCode === 404 && searchTerm" class="message">
         Sorry, there are no articles matching your search terms
         <NuxtLink to="/">Clear Search</NuxtLink>
@@ -29,6 +29,8 @@
           </template>
         </BaseCard>
       </div>
+
+      <BasePagination :current-page="Number(currentPage)" hash="#articles" />
     </div>
   </div>
 </template>
@@ -36,9 +38,12 @@
 <script setup>
 const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
-const currentPage = ref(route.query.page ?? 1)
 const pageLimit = ref(route.query.limit ?? 16)
 const searchTerm = computed(() => route.query.search)
+
+const currentPage = computed(() => {
+  return route.query.page ?? 1
+})
 
 const url = computed(() => {
   const url = new URL(`${runtimeConfig.public.apiBase}/Articles`)
@@ -46,7 +51,9 @@ const url = computed(() => {
   url.searchParams.append('limit', pageLimit.value)
   url.searchParams.append('orderBy', 'createdAt')
   url.searchParams.append('order', 'desc')
-  url.searchParams.append('search', searchTerm.value ?? null)
+  if (searchTerm.value) {
+    url.searchParams.append('search', searchTerm.value)
+  }
   return url
 })
 
