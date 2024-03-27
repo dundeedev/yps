@@ -7,9 +7,9 @@
         <NuxtLink to="/">Clear Search</NuxtLink>
       </div>
       <h2 v-else-if="searchTerm && articles">Search results for: {{ searchTerm }}</h2>
-      <div v-if="articles" class="news-list">
+      <div v-if="articles && articles.list" class="news-list">
         <BaseCard
-          v-for="(article, index) in articles"
+          v-for="(article, index) in articles.list"
           :key="`news-item-${index}`"
           :title="article.title"
           :image="article.image"
@@ -40,13 +40,34 @@ const url = computed(() => {
   return url
 })
 
-const { data: articles, error } = await useFetch(url, {
-  transform: (articles) => {
-    // Replace PlaceIMG as it no longer exists
-    return articles.map((item) => ({
-      ...item,
-      image: 'https://picsum.photos/640/480',
-    }))
+const {
+  data: articles,
+  pending,
+  error,
+} = await useAsyncData(
+  'articles',
+  async () => {
+    const [list, latest] = await Promise.all([
+      $fetch(url.value),
+      $fetch(`${runtimeConfig.public.apiBase}/Articles?page=1&limit=1`),
+    ])
+    return { list, latest }
   },
-})
+  {
+    watch: [url],
+    transform: (articles) => {
+      const list = replaceImages(articles.list)
+      const latest = replaceImages(articles.latest)
+      return { list, latest }
+    },
+  },
+)
+
+// Replace PlaceIMG as it no longer exists
+function replaceImages(articles) {
+  return articles.map((item) => ({
+    ...item,
+    image: 'https://picsum.photos/640/480',
+  }))
+}
 </script>
