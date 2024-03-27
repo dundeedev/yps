@@ -3,13 +3,16 @@
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
   gap: 40px 30px;
-  padding: 100px 0;
+  padding: 40px 0;
 
   @media (--tablet) {
     --columns: 2;
+    gap: 60px 30px;
   }
 
   @media (--desktop) {
     --columns: 4;
+    gap: 80px 30px;
+    padding: 100px 0;
   }
 }

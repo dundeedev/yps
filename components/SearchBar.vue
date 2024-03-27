@@ -26,7 +26,7 @@ function submitForm() {
   align-items: center;
 
   &__input {
-    border: 1px solid var(--neutral-echo);
+    border: 1px solid var(--neutral-bravo);
     background: none;
     padding: 10px 100px 10px 40px;
     border-radius: 5px;
@@ -41,7 +41,7 @@ function submitForm() {
     left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--neutral-foxtrot);
+    color: var(--neutral-bravo);
   }
 
   &__button {

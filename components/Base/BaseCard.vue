@@ -41,11 +41,6 @@ const props = defineProps({
   padding-bottom: 40px;
   transition: box-shadow 0.2s, transform 0.2s;
 
-  &:hover {
-    transform: scale3d(1.05, 1.05, 1.05);
-    box-shadow: 4px 8px 40px rgba(173, 191, 202, 0.8);
-  }
-
   &__figure {
     margin-bottom: 35px;
   }
@@ -67,6 +62,13 @@ const props = defineProps({
   &__footer {
     padding: 0 10px;
     margin-top: auto;
+  }
+
+  @media (--desktop) {
+    &:hover {
+      transform: scale3d(1.05, 1.05, 1.05);
+      box-shadow: 4px 8px 40px rgba(173, 191, 202, 0.8);
+    }
   }
 }
 </style>

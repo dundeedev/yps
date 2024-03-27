@@ -1,5 +1,5 @@
 <template>
-  <component :is="component" to="/articles/1" class="button" :class="buttonClasses">
+  <component :is="component" :to="to" class="button" :class="buttonClasses">
     <slot />
   </component>
 </template>
