@@ -42,7 +42,7 @@ const props = defineProps({
   transition: box-shadow 0.2s, transform 0.2s;
 
   &__figure {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   &__body {
@@ -50,17 +50,22 @@ const props = defineProps({
   }
 
   &__title {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   &__excerpt {
-    color: var(--text-muted-colour);
+    color: var(--neutral-bravo);
     font-size: 0.875rem;
     line-height: 1.57;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__footer {
     padding: 0 10px;
+    padding-top: 10px;
     margin-top: auto;
   }
 

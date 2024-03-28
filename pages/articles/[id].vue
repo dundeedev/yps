@@ -5,9 +5,14 @@
         <h2 class="article__title">{{ article.title }}</h2>
       </header>
       <div class="article__intro">
-        <time v-if="article.createdAt" class="article__date" :datetime="article.createdAt">
-          {{ article.createdAt }}
-        </time>
+        <div class="article__meta">
+          <time v-if="article.createdAt" class="article__date" :datetime="article.createdAt">
+            {{ formatDate(article.createdAt) }} </time
+          >|
+          <span class="article__author">
+            {{ article.author }}
+          </span>
+        </div>
         <div v-if="article.intro" class="article__intro-text">
           <p>{{ article.intro }}</p>
         </div>
@@ -20,6 +25,7 @@
       </div>
       <BaseSocialShare class="article__share" />
     </article>
+    <RelatedArticles title="Latest news articles" />
   </div>
 </template>
 
@@ -64,14 +70,29 @@ const { data: article, error } = await useFetch(`${runtimeConfig.public.apiBase}
     }
   }
 
+  &__meta {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 30px;
+    color: var(--text-muted-colour);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+
   &__date {
     display: block;
-    margin: 0 0 30px;
   }
 
   &__intro-text {
     margin: 0 0 30px;
     font-weight: 700;
+
+    @media (--tablet) {
+      margin: 0 0 60px;
+      text-align: center;
+    }
   }
 
   &__image {
