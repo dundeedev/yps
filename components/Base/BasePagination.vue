@@ -69,12 +69,23 @@ function pageTo(n) {
 
 <style scoped>
 .pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   padding: 40px 0 100px;
+  gap: 20px;
+
+  @media (--tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__pages {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    justify-self: center;
+
     ul {
       display: flex;
       align-items: center;
@@ -82,6 +93,18 @@ function pageTo(n) {
       list-style: none;
       padding: 0;
     }
+
+    :deep .button {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__next {
+    grid-column: 3;
   }
 }
 </style>
