@@ -5,7 +5,12 @@
   <NuxtPage />
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: 'Your Parking Space | Frontend Developer Technical Test',
+  meta: [{ name: 'description', content: 'Technical assessment for the YourParkingSpace Frontend Engineer Role.' }],
+})
+</script>
 
 <style>
 .page-enter-active,

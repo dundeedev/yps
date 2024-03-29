@@ -26,6 +26,9 @@
       <BaseSocialShare class="article__share" />
     </article>
     <RelatedArticles title="Latest news articles" />
+
+    <Title v-if="article.title">{{ `${article.title} | Your Parking Space` }}</Title>
+    <Meta v-if="article.intro" name="description" :content="article.intro" />
   </div>
 </template>
 

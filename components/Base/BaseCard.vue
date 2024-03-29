@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__figure">
-      <NuxtImg v-if="image" :src="image" data-test="image" />
+      <NuxtImg v-if="image" :src="image" data-test="image" :alt="title ?? 'Card Image'" />
     </div>
     <div class="card__body">
       <h3 v-if="title" class="card__title" data-test="title">

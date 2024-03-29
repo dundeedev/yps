@@ -1,7 +1,5 @@
 # Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Setup
 
 Make sure to install the dependencies:
@@ -36,6 +34,13 @@ yarn dev
 
 # bun
 bun run dev
+```
+
+## Tests
+
+```bash
+# npm
+npm run test
 ```
 
 ## Production
