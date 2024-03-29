@@ -30,7 +30,7 @@
         </BaseCard>
       </div>
 
-      <BasePagination :current-page="Number(currentPage)" hash="#articles" />
+      <BasePagination :current-page="Number(currentPage)" hash="#articles" :perPage="pageLimit" :count="count" />
     </div>
   </div>
 </template>
@@ -40,6 +40,7 @@ const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
 const pageLimit = ref(route.query.limit ?? 16)
 const searchTerm = computed(() => route.query.search)
+const count = 79 // Hardcode as there is no count value/header in response
 
 const currentPage = computed(() => {
   return route.query.page ?? 1

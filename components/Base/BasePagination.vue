@@ -32,11 +32,11 @@ const props = defineProps({
   },
   count: {
     type: Number,
-    default: 78,
+    default: 1,
   },
   perPage: {
     type: Number,
-    default: 16,
+    default: 1,
   },
   hash: {
     type: String,
