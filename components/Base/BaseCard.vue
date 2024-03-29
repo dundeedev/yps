@@ -1,17 +1,17 @@
 <template>
   <div class="card">
     <div class="card__figure">
-      <NuxtImg v-if="image" :src="image" />
+      <NuxtImg v-if="image" :src="image" data-test="image" />
     </div>
     <div class="card__body">
-      <h3 class="card__title">
+      <h3 v-if="title" class="card__title" data-test="title">
         {{ title }}
       </h3>
-      <div class="card__excerpt">
+      <div v-if="intro" class="card__excerpt" data-test="excerpt">
         {{ intro }}
       </div>
     </div>
-    <div class="card__footer">
+    <div class="card__footer" data-test="footer">
       <slot name="footer"></slot>
     </div>
   </div>

@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: false,
   },
-  modules: ['@nuxt/eslint', 'nuxt-svgo', '@nuxt/image'],
+  modules: ['@nuxt/eslint', 'nuxt-svgo', '@nuxt/image', '@nuxt/test-utils/module'],
   eslint: {
     config: {
       standalone: false,

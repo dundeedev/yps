@@ -22,5 +22,10 @@ export default withNuxt(
         'curly': 'all',
       },
     },
+    {
+      rules: {
+        'test/consistent-test-it': ['warning', { fn: 'test' }],
+      },
+    },
   ),
 )
